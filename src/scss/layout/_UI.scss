@@ -1,0 +1,102 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen{
+        height: 20rem;
+        background-image: url('../img/1.jpg');
+        background-size: cover;
+        background-position: center center ;
+        @include m.tablet{
+            height: auto;
+        }
+    }
+
+    .app{
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        @include m.tablet{
+            overflow-y: scroll;
+        }
+    }
+
+}
+
+.btn{
+    @include m.boton(v.$azul, v.$blanco);
+}
+
+.btn-eliminar{
+    @include m.boton(v.$rojo, v.$blanco);
+}
+
+.acciones{
+    margin-top: v.$separacion;
+    display: block;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a{
+        color: v.$blanco;
+        display: block;
+        text-align: center;
+        margin-bottom: calc(v.$separacion /2);
+    }
+}
+
+.paginacion{
+    padding: v.$separacion 0;
+    display: block;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    button{
+        margin: 0 0 1rem 0;
+    }
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.barra{
+    margin: v.$separacion/2 0;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn{
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.barra-servicios{
+    margin-bottom: v.$separacion;
+    
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton{
+        margin-bottom: 0 0 1rem 0;
+    }
+}
